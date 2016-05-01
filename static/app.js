@@ -6,6 +6,7 @@
 var questionCount = 0;
 var currentAnswer = 0;
 var correctAnswer = 0;
+var totalCorrect = 0;
 
 
 // Functions
@@ -46,7 +47,7 @@ var checkAnswer = function(){
     $('#gif').delay(600).fadeIn(100);
 
     if(currentAnswer == correctAnswer){
-      console.log('correct');
+      totalCorrect++;
       $('#q' + (questionCount+1)).removeClass('current').addClass('correct');
       $('.qa-head').text('Correct!');
       $('#gif').addClass('pos' + randomBg());
@@ -69,14 +70,20 @@ var randomBg = function(){
 // Advance Question
 var advance = function(){
   $('#gif').removeClass().hide();
-  questionCount++;
-  questionMarker();
-  putQuestion(questionBank[questionCount]);
-  $('.qa-head').text('Question ' + (questionCount + 1));
-  $('.question').fadeIn(200);
-  $('.answers').fadeIn(200);
-};
 
+  if(questionCount < (questionBank.length-1)){
+    questionCount++;
+    questionMarker();
+    putQuestion(questionBank[questionCount]);
+    $('.qa-head').text('Question ' + (questionCount + 1));
+    $('.question').fadeIn(200);
+    $('.answers').fadeIn(200);
+} else {
+  $('.qa-head').empty();
+  $('.score').text(totalCorrect);
+  $('.completed').show();
+}
+};
 $(document).ready(function(){
 
   startGame();
