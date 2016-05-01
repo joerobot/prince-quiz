@@ -76,7 +76,7 @@ header {
   padding: 0;
 }
 
-.q-count li {
+.counter {
   display: inline-block;
   width: 1.2rem;
   height: 1.2rem;
@@ -87,8 +87,16 @@ header {
   color: #2E0555;
 }
 
-#q1 {
+.current {
   background-color: #C2AA0B;
+}
+
+.correct {
+  background-color: #36954F;
+}
+
+.incorrect {
+  background-color: #AC0000;
 }
 
 .answers {
@@ -129,7 +137,7 @@ header {
   background-color: #36954F;
 }
 
-.gif-cont {
+#gif {
   display: none;
   position: relative;
   width: 90%;
@@ -144,6 +152,8 @@ header {
   position: relative;
   bottom: 0;
   text-align: center;
+  background-color: #FFF;
+  color: #2E0555;
 }
 
 .neg1 {
