@@ -1,13 +1,11 @@
-// TODO: "Click Prince to continue" advances question count, hide gif, load question body
-
+// TODO: Add quiz complete
 
 
 // Variables
 
-var questionCount = 1;
+var questionCount = 0;
 var currentAnswer = 0;
 var correctAnswer = 0;
-
 
 
 // Functions
@@ -15,24 +13,27 @@ var correctAnswer = 0;
 // Load the currentQ into the answers
 var putQuestion = function(currentQ){
   $('#q-text').text(currentQ.questionText);
-  $('#a1').text(currentQ.optionA);
-  $('#a2').text(currentQ.optionB);
-  $('#a3').text(currentQ.optionC);
-  $('#a4').text(currentQ.optionD);
-}
+  $('#A').text(currentQ.optionA);
+  $('#B').text(currentQ.optionB);
+  $('#C').text(currentQ.optionC);
+  $('#D').text(currentQ.optionD);
+  currentQ.newCorrect();
+};
 
 // Initialises the game
 var startGame = function(){
   $('.entry').click(function(){
     $('.entry').fadeOut(1000);
-    $('.quiz-body').delay(1000).fadeIn(1000);
     questionMarker();
+    putQuestion(questionBank[questionCount]);
+    $('.qa-head').text('Question ' + (questionCount + 1));
+    $('.quiz-body').delay(1000).fadeIn(1000);
   })
 };
 
 // Highlights current question number
 var questionMarker = function(){
-  $('#q' + questionCount).addClass('current');
+  $('#q' + (questionCount +1)).addClass('current');
 };
 
 // Check an answer is correct and display result
@@ -46,14 +47,14 @@ var checkAnswer = function(){
 
     if(currentAnswer == correctAnswer){
       console.log('correct');
-      $('#q' + questionCount).removeClass('current').addClass('correct');
+      $('#q' + (questionCount+1)).removeClass('current').addClass('correct');
       $('.qa-head').text('Correct!');
       $('#gif').addClass('pos' + randomBg());
 
     }
     else {
       console.log('incorrect');
-      $('#q' + questionCount).removeClass('current').addClass('incorrect');
+      $('#q' + (questionCount+1)).removeClass('current').addClass('incorrect');
       $('.qa-head').text('Incorrect!');
       $('#gif').addClass('neg' + randomBg());
     };
@@ -70,6 +71,8 @@ var advance = function(){
   $('#gif').removeClass().hide();
   questionCount++;
   questionMarker();
+  putQuestion(questionBank[questionCount]);
+  $('.qa-head').text('Question ' + (questionCount + 1));
   $('.question').fadeIn(200);
   $('.answers').fadeIn(200);
 };
@@ -80,6 +83,7 @@ $(document).ready(function(){
 
 // Submit Answer
   $('body').on('click', '.confirm', function(){
+    currentAnswer = $('.picked').attr('id');
     checkAnswer();
   })
 
@@ -103,7 +107,9 @@ var question1 = {
   optionB: "Prince",
   optionC: "Prince Rogers Nelson",
   optionD: "Prince Nelson Rogers",
-  correctAnswer: this.optionC
+  newCorrect: function(){
+    correctAnswer = "C";
+  }
 }
 
 var question2 = {
@@ -112,7 +118,9 @@ var question2 = {
   optionB: "When doves cry",
   optionC: "When doves lie",
   optionD: "When gloves dry",
-  correctAnswer: this.optionB
+  newCorrect: function(){
+    correctAnswer = "B";
+  }
 }
 
 var question3 = {
@@ -121,7 +129,9 @@ var question3 = {
   optionB: "Purple Rain",
   optionC: "Lovesexy",
   optionD: "Dirty Mind",
-  correctAnswer: this.optionD
+  newCorrect: function(){
+    correctAnswer = "D";
+  }
 }
 
 var question4 = {
@@ -130,7 +140,9 @@ var question4 = {
   optionB: "TH1rd 3yE g1rL",
   optionC: "P.U.R.P.L.E.",
   optionD: "pr1nc3",
-  correctAnswer: this.optionB
+  newCorrect: function(){
+    correctAnswer = "B";
+  }
 }
 
 var question5 = {
@@ -139,7 +151,9 @@ var question5 = {
   optionB: "Little Red Corvette",
   optionC: "Little Red Cadillac",
   optionD: "Mustang Sally",
-  correctAnswer: this.optionB
+  newCorrect: function(){
+    correctAnswer = "B";
+  }
 }
 
 var question6 = {
@@ -148,7 +162,9 @@ var question6 = {
   optionB: "Finding Nemo",
   optionC: "Antz",
   optionD: "Up",
-  correctAnswer: this.optionA
+  newCorrect: function(){
+    correctAnswer = "A";
+  }
 }
 
 var question7 = {
@@ -157,7 +173,9 @@ var question7 = {
   optionB: "Check Castle",
   optionC: "Paisley Park",
   optionD: "Flannel Mansion",
-  correctAnswer: this.optionC
+  newCorrect: function(){
+    correctAnswer = "C";
+  }
 }
 
 var question8 = {
@@ -166,5 +184,9 @@ var question8 = {
   optionB: "Time After Time",
   optionC: "Ghostbusters",
   optionD: "With or Without You",
-  correctAnswer: this.optionA
+  newCorrect: function(){
+    correctAnswer = "A";
+  }
 }
+
+var questionBank = [question1, question2, question3, question4, question5, question6, question7, question8];
