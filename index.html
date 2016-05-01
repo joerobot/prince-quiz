@@ -1,65 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>The Prince Quiz</title>
-  <link href='//fonts.googleapis.com/css?family=Rubik:900italic|Roboto+Condensed' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="static/style.css">
+    <meta charset="UTF-8">
+    <title>The Prince Quiz</title>
+    <link href='//fonts.googleapis.com/css?family=Rubik:900italic|Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/style.css">
 </head>
+
 <body>
-  <header>
-    <h2 class="title-top display-font">The</h2>
-    <h1 class="title display-font">Prince</h1>
-    <h2 class="title-bottom display-font">Quiz</h2>
-  </header>
+    <header>
+        <h2 class="title-top display-font">The</h2>
+        <h1 class="title display-font">Prince</h1>
+        <h2 class="title-bottom display-font">Quiz</h2>
+    </header>
 
-  <section class="entry">
-    <img class="lovesymbol" src="static/img/lovesymbol.png">
-    <h2 class="touchme display-font">Touch Me To Begin</h2>
-  </section>
+    <section class="entry">
+        <img class="lovesymbol" src="static/img/lovesymbol.png">
+        <h2 class="touchme display-font">Touch Me To Begin</h2>
+    </section>
 
-  <section class="quiz-body">
-    <div class="progress">
-      <ul class="q-count display-font">
-        <li class="counter" id="q1">1</li>
-        <li class="counter" id="q2">2</li>
-        <li class="counter" id="q3">3</li>
-        <li class="counter" id="q4">4</li>
-        <li class="counter" id="q5">5</li>
-        <li class="counter" id="q6">6</li>
-        <li class="counter" id="q7">7</li>
-        <li class="counter" id="q8">8</li>
-      </ul>
-    </div>
+    <section class="quiz-body">
+        <div class="progress">
+            <ul class="q-count display-font">
+                <li class="counter" id="q1">1</li>
+                <li class="counter" id="q2">2</li>
+                <li class="counter" id="q3">3</li>
+                <li class="counter" id="q4">4</li>
+                <li class="counter" id="q5">5</li>
+                <li class="counter" id="q6">6</li>
+                <li class="counter" id="q7">7</li>
+                <li class="counter" id="q8">8</li>
+            </ul>
+        </div>
 
-    <div class="qa-body">
-      <h3 class="qa-head display-font"></h3>
-      <div class="question">
-        <p id="q-text"></p>
-      </div>
-      <div class="answers">
-        <ul>
-          <li class="option" id="A"></li>
-          <li class="option" id="B"></li>
-          <li class="option" id="C"></li>
-          <li class="option" id="D"></li>
-        </ul>
-        <p class="confirm display-font">Confirm</p>
-      </div>
-      <div class="gif-cont" id="gif">
-        <p class="helper">Click Prince to Continue</p>
-      </div>
-      <div class="completed">
-        <h3>You Scored:</h3>
-        <h1><span class="score">8</span>/8</h1>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <p class="display-font">App by Joe Reed</p>
-  </footer>
+        <div class="qa-body">
+            <h3 class="qa-head display-font"></h3>
+            <div class="question">
+                <p id="q-text"></p>
+            </div>
+            <div class="answers">
+                <ul>
+                    <li class="option" id="A"></li>
+                    <li class="option" id="B"></li>
+                    <li class="option" id="C"></li>
+                    <li class="option" id="D"></li>
+                </ul>
+                <p class="confirm display-font">Confirm</p>
+            </div>
+            <div class="gif-cont" id="gif">
+                <p class="helper">Click Prince to Continue</p>
+            </div>
+            <div class="completed">
+                <h3>You Scored:</h3>
+                <h1><span class="score"></span>/8</h1>
+                <h3 class="tryagain">Click to Try Again</h3>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p class="display-font">App by Joe Reed</p>
+    </footer>
 
-  <script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
-  <script src="static/app.js"></script>
+    <script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="static/app.js"></script>
 </body>
+
 </html>
