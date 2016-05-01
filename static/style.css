@@ -199,3 +199,8 @@ footer {
   background-color: #2E0555;
   text-align: center;
 }
+
+body:after{
+    position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+    content: url(img/pos1.gif) url(img/pos2.gif) url(img/pos3.gif) url(img/pos4.gif) url(img/neg1.gif) url(img/neg2.gif) url(img/neg3.gif) url(img/neg4.gif);
+}
