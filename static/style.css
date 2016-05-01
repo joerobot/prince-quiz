@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+body {
+  background-color: #55099E;
+  color: #FFF;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1, h2 {
+  margin: 0;
+  padding: 0;
+  text-transform: lowercase;
+}
+
+.display-font {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 900;
+}
+
+header {
+  position: relative;
+  max-width: 12rem;
+  margin: 4rem auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 3.25rem;
+}
+
+.title-top {
+  text-align: left;
+}
+
+.title-bottom {
+  text-align: right;
+}
+
+.lovesymbol {
+  transition: opacity, 1s, ease-in-out;
+}
+
+.lovesymbol:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.lovesymbol {
+  display: block;
+  margin: 2rem auto;
+}
+
+.touchme {
+  text-align: center;
+  text-transform: none;
+}
+
+.quiz-body {
+  max-width: 32rem;
+  margin: 2rem auto;
+  padding: 4rem;
+  padding-top: 1rem;
+  display: none;
+  background-color: #2E0555;
+}
+
+.q-count {
+  text-align: center;
+  padding: 0;
+}
+
+.q-count li {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0 0.2rem;
+  border-radius: 0.6rem;
+  text-align: center;
+  background-color: #FFF;
+  color: #2E0555;
+}
+
+#q1 {
+  background-color: #C2AA0B;
+}
+
+.answers {
+  text-align: center;
+  width: 100%;
+  color: #2E0555;
+}
+
+.option {
+  margin: 1rem auto;
+  padding: 0.5rem 0;
+  background-color: #FFF;
+  cursor: pointer;
+  transition: background-color, 0.25s, ease-in-out;
+}
+
+.option:hover {
+  background-color: #A265DC;
+}
+
+.picked {
+  background-color: #55099E;
+  color: #FFFFFF;
+}
+
+.confirm {
+  display: block;
+  width: 8rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 4rem;
+  background-color: #FFF;
+  cursor: pointer;
+  transition: background-color, 0.4s, ease-in-out;
+}
+
+.confirm:hover {
+  background-color: #36954F;
+}
+
+.gif-cont {
+  display: none;
+  position: relative;
+  width: 90%;
+  height: 20rem;
+  margin: 0 auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.helper {
+  position: relative;
+  bottom: 0;
+  text-align: center;
+}
+
+.neg1 {
+  background-image: url(img/neg1.gif);
+}
+
+.neg2 {
+  background-image: url(img/neg2.gif);
+}
+
+.neg3 {
+  background-image: url(img/neg3.gif);
+}
+
+.neg4 {
+  background-image: url(img/neg4.gif);
+}
+
+.pos1 {
+  background-image: url(img/pos1.gif);
+}
+
+.pos2 {
+  background-image: url(img/pos2.gif);
+}
+
+.pos3 {
+  background-image: url(img/pos3.gif);
+}
+
+.pos4 {
+  background-image: url(img/pos4.gif);
+}
+
+footer {
+  width: 100%;
+  padding: 2rem 0;
+  margin-top: 4rem;
+  background-color: #2E0555;
+  text-align: center;
+}

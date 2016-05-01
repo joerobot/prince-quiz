@@ -3,17 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>The Prince Quiz</title>
+  <link href='//fonts.googleapis.com/css?family=Rubik:900italic|Roboto+Condensed' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
   <header>
-    <h2 class="title-top">The</h2>
-    <h1 class="title">Prince</h1>
-    <h2 class="title-bottom">Quiz</h2>
+    <h2 class="title-top display-font">The</h2>
+    <h1 class="title display-font">Prince</h1>
+    <h2 class="title-bottom display-font">Quiz</h2>
   </header>
+
+  <section class="entry">
+    <img class="lovesymbol" src="static/img/lovesymbol.png">
+    <h2 class="touchme display-font">Touch Me To Begin</h2>
+  </section>
 
   <section class="quiz-body">
     <div class="progress">
-      <ul class="q-count">
+      <ul class="q-count display-font">
         <li id="q1">1</li>
         <li id="q2">2</li>
         <li id="q3">3</li>
@@ -26,25 +33,29 @@
     </div>
 
     <div class="qa-body">
-      <h2 class="qa-head">Question/Correct</h2>
+      <h3 class="qa-head display-font">Question <span id="q-number">1</span></h3>
       <div class="question">
-        <p>Here is a question</p>
+        <p id="q-text">What is Prince's real name?</p>
       </div>
       <div class="answers">
         <ul>
-          <li id="a1">Answer 1</li>
-          <li id="a2">Answer 2</li>
-          <li id="a3">Answer 3</li>
-          <li id="a4">Answer 4</li>
+          <li class="option" id="a1">Peter Ulversson</li>
+          <li class="option picked" id="a2">Prince Rogers Nelson</li>
+          <li class="option"id="a3">Prince Nelson Rogers</li>
+          <li class="option"id="a4">Prince</li>
         </ul>
+        <p class="confirm display-font">Confirm</p>
       </div>
-      <div class="gif-cont"></div>
+      <div class="gif-cont pos4">
+        <p class="helper">Click Prince to Continue</p>
+      </div>
     </div>
   </section>
   <footer>
-    <p>App by Joe Reed</p>
+    <p class="display-font">App by Joe Reed</p>
   </footer>
 
-  <div class="overlay"></div>
+  <script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+  <script src="static/app.js"></script>
 </body>
 </html>
