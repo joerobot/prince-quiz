@@ -1,5 +1,4 @@
-// TODO: Improve UI
-
+"use strict";
 
 // Variables
 
@@ -84,14 +83,14 @@ var advance = function() {
         questionMarker();
         putQuestion(questionBank[questionCount]);
         $('.qa-head').text('Question ' + (questionCount + 1));
-        $('.question').fadeIn(200);
-        $('.answers').fadeIn(200);
+        $('.question').fadeIn(400);
+        $('.answers').fadeIn(400);
     } else {
         // Show completed screen
         $('.qa-head').text("");
-        $('.score').text(totalCorrect).show();
-        $('.completed').show();
-        $('.tryagain').show();
+        $('.score').text(totalCorrect).show(200);
+        $('.completed').show(200);
+        $('.tryagain').show(200);
     }
 };
 
@@ -122,9 +121,9 @@ $(document).ready(function() {
 
     // New game
     $('body').on('click', '.tryagain', function() {
-        $('.score').hide();
-        $('.completed').hide();
-        $('.tryagain').hide();
+        $('.score').hide(400);
+        $('.completed').hide(400);
+        $('.tryagain').hide(400);
         startGame();
     });
 
@@ -141,7 +140,7 @@ var question1 = {
     optionD: "Prince Nelson Rogers",
     newCorrect: function() {
         correctAnswer = "C";
-    };
+    }
 };
 
 var question2 = {
@@ -152,7 +151,7 @@ var question2 = {
     optionD: "When gloves dry",
     newCorrect: function() {
         correctAnswer = "B";
-    };
+    }
 };
 
 var question3 = {
@@ -163,7 +162,7 @@ var question3 = {
     optionD: "Dirty Mind",
     newCorrect: function() {
         correctAnswer = "D";
-    };
+    }
 };
 
 var question4 = {
@@ -174,7 +173,7 @@ var question4 = {
     optionD: "pr1nc3",
     newCorrect: function() {
         correctAnswer = "B";
-    };
+    }
 };
 
 var question5 = {
@@ -185,7 +184,7 @@ var question5 = {
     optionD: "Mustang Sally",
     newCorrect: function() {
         correctAnswer = "B";
-    };
+    }
 };
 
 var question6 = {
@@ -196,7 +195,7 @@ var question6 = {
     optionD: "Up",
     newCorrect: function() {
         correctAnswer = "A";
-    };
+    }
 };
 
 var question7 = {
@@ -207,7 +206,7 @@ var question7 = {
     optionD: "Flannel Mansion",
     newCorrect: function() {
         correctAnswer = "C";
-    };
+    }
 };
 
 var question8 = {
@@ -218,7 +217,7 @@ var question8 = {
     optionD: "With or Without You",
     newCorrect: function() {
         correctAnswer = "A";
-    };
+    }
 };
 
 var questionBank = [question1, question2, question3, question4, question5, question6, question7, question8];
