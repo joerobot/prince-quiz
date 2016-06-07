@@ -1,0 +1,46 @@
+{
+  "name": "prince-quiz",
+  "version": "1.0.0",
+  "description": "A Fun Quiz App about Prince",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mkdir": "mkdir -p css js img",
+    "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:img && npm run build:js",
+    "clean": "rm -rf css js img",
+    "build:html": "npm run clean:html && cp src/index.html .",
+    "clean:html": "rm -f index.html",
+    "build:css": "npm run clean:css && cp -r src/css/* css/",
+    "minify:css": "cleancss -o src/css/style.min.css src/css/style.css",
+    "clean:css": "rm -f css/*",
+    "build:img": "npm run clean:img && cp -r src/img/* img/",
+    "clean:img": "rm -f img/*",
+    "build:js": "npm run clean:js && npm run build:js:unminified && npm run build:js:minified",
+    "clean:js": "rm -f js/*",
+    "build:js:unminified": "webpack",
+    "build:js:minified": "webpack --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joerobot/prince-quiz.git"
+  },
+  "keywords": [
+    "Prince",
+    "jQuery",
+    "GIF"
+  ],
+  "author": "Joe Reed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joerobot/prince-quiz/issues"
+  },
+  "homepage": "https://github.com/joerobot/prince-quiz#readme",
+  "dependencies": {
+    "jquery": "^2.2.4"
+  },
+  "devDependencies": {
+    "clean-css": "^3.4.17",
+    "uglify-js": "^2.6.2",
+    "webpack": "^1.13.1"
+  }
+}
